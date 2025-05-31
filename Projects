@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section class="projects">
+    <h2>My Projects</h2>
+
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Project Name 1</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima 
+        saepe recusandae libero, iste ad asperiores! Explicabo commodi quo 
+        itaque! Ipsam!</p>
+        <div class="project-tag">Project 1</div>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-info">
+        <h3>Project Name 2</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Eius at enim eum illum aperiam placeat esse? Mollitia omnis minima 
+        saepe recusandae libero, iste ad asperiores! Explicabo commodi quo 
+        itaque! Ipsam!</p>
+        <div class="project-tag">Project 2</div>
+      </div>
+    </div>
+
+    <!-- Add more project cards here as needed -->
+
+  </section>
+
+</body>
+</html>
