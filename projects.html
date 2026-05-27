@@ -3,69 +3,400 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio Project Page</title>
+  <title>Projects Page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <style>
-    body {
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family: Arial, sans-serif;
-      background: #f0f2f5;
-      text-align: center;
-      padding: 50px;
+      background:#ffff;
+      color:#000;
+      overflow-x:hidden;
     }
 
-    h1 {
-      color: #333;
+    a{
+      text-decoration:none;
     }
 
-    .btn {
-      background-color: #007bff;
-      color: white;
-      padding: 15px 30px;
-      border: none;
-      border-radius: 8px;
-      font-size: 18px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    /* HEADER */
+
+    .hero{
+      min-height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      color: #fff;
+      background:
+      linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.9)),
+      url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop') center/cover;
     }
 
-    .btn:hover {
-      background-color: #0056b3;
+    .hero-content{
+      max-width:800px;
     }
 
-    .portfolio-images {
-      display: none;
-      margin-top: 30px;
+    .hero h1{
+      font-size:60px;
+      margin-bottom:20px;
+      font-weight:700;
+      line-height:1.1;
     }
 
-    .portfolio-images img {
-      max-width: 300px;
-      margin: 15px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
+    .hero h1 span{
+      color:#1e30f3;
     }
 
-    .portfolio-images img:hover {
-      transform: scale(1.05);
+    .hero p{
+      font-size:18px;
+      color:#cbd5e1;
+      line-height:1.7;
+      margin-bottom:30px;
     }
+
+    .hero-btn{
+      display:inline-block;
+      padding:14px 34px;
+      background:#1e30f3;
+      color:#fff;
+      border-radius:50px;
+      font-size:16px;
+      font-weight:bold;
+      transition:0.3s ease;
+    }
+
+    .hero-btn:hover{
+      background:#0ea5e9;
+      transform:translateY(-3px);
+    }
+
+    /* PROJECTS */
+
+    .projects-section{
+      padding:80px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#94a3b8;
+      max-width:650px;
+      margin:auto;
+      line-height:1.7;
+    }
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:-webkit-linear-gradient(
+315deg, #1e30f3 0%, #e21e80 100%);
+      border-radius:20px;
+      overflow:hidden;
+      transition:0.4s ease;
+      position:relative;
+      border:1px solid rgba(255,255,255,0.05);
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      box-shadow:0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .project-image{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .project-image img{
+      width:100%;
+      height:250px;
+      object-fit:cover;
+      transition:0.4s ease;
+    }
+
+    .project-card:hover .project-image img{
+      transform:scale(1.08);
+    }
+
+    .project-content{
+      padding:25px;
+    }
+
+    .project-content h3{
+      font-size:24px;
+      margin-bottom:12px;
+      color: #fff;
+    }
+
+    .project-content p{
+      color:#cbd5e1;
+      line-height:1.7;
+      margin-bottom:20px;
+    }
+
+    .project-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .project-tags span{
+      background:#1e30f3;
+      color:#fff;
+      padding:8px 14px;
+      border-radius:50px;
+      font-size:13px;
+    }
+
+    .project-buttons{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:12px 20px;
+      border-radius:10px;
+      font-size:14px;
+      font-weight:bold;
+      transition:0.3s ease;
+    }
+
+    .btn-primary{
+      background:#fff;
+      color:#000;
+    }
+
+    .btn-primary:hover{
+      background:#0ea5e9;
+    }
+
+    .btn-outline{
+      border:1px solid #fff;
+      color:#38bdf8;
+    }
+
+    .btn-outline:hover{
+      color:#fff;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:30px 20px;
+      color:#94a3b8;
+      border-top:1px solid rgba(255,255,255,0.08);
+      margin-top:50px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero{
+        min-height:70vh;
+      }
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:16px;
+      }
+
+      .section-title h2{
+        font-size:32px;
+      }
+
+      .project-content h3{
+        font-size:22px;
+      }
+    }
+
+    @media(max-width:480px){
+
+      .hero h1{
+        font-size:34px;
+      }
+
+      .hero-btn{
+        width:100%;
+      }
+
+      .project-buttons{
+        flex-direction:column;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+    }
+
   </style>
 </head>
 <body>
 
-  <h1>My Project Portfolio</h1>
-  <button class="btn" onclick="showPortfolio()">Website</button>
+  <!-- HERO SECTION -->
 
-  <div class="portfolio-images" id="portfolio">
-    <img src="https://via.placeholder.com/300x200?text=Portfolio+1" alt="Portfolio 1">
-    <img src="https://via.placeholder.com/300x200?text=Portfolio+2" alt="Portfolio 2">
-    <img src="https://via.placeholder.com/300x200?text=Portfolio+3" alt="Portfolio 3">
-  </div>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Modern <span>Projects</span> Showcase</h1>
 
-  <script>
-    function showPortfolio() {
-      const portfolio = document.getElementById('portfolio');
-      portfolio.style.display = portfolio.style.display === 'none' || portfolio.style.display === '' ? 'block' : 'none';
-    }
-  </script>
+      <p>
+        Explore my latest website development projects with premium
+        responsive UI design, animations, modern layouts, and mobile-friendly experiences.
+      </p>
+
+      <a href="#projects" class="hero-btn">
+        View Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+
+  <section class="projects-section" id="projects">
+
+    <div class="section-title">
+      <h2>Featured Projects</h2>
+
+      <p>
+        Professional modern websites designed with clean UI,
+        responsive layouts, and premium user experience.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Business Website</h3>
+
+          <p>
+            Modern responsive business website with premium UI,
+            service sections, animations, and mobile optimization.
+          </p>
+
+          <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Responsive</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="https://pginfrastructure.com/" class="btn btn-primary">Live Demo</a>
+           
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="project-content">
+
+          <h3>E-Commerce Store</h3>
+
+          <p>
+            Premium online shopping website with modern product
+            cards, responsive design, and clean user interface.
+          </p>
+
+          <div class="project-tags">
+            <span>UI/UX</span>
+            <span>Shop</span>
+            <span>Mobile</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="https://vssaffron.com/" class="btn btn-primary">Live Demo</a>
+            
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+
+      <div class="project-card">
+
+        <div class="project-image">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop" alt="">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Educational Website</h3>
+
+          <p>
+            Creative Educational website with smooth effects,
+            responsive layouts, and modern theme design.
+          </p>
+
+          <div class="project-tags">
+            <span>Educational</span>
+            <span>Modern UI</span>
+            <span>Light Theme</span>
+          </div>
+
+          <div class="project-buttons">
+            <a href="https://globalkidsacademy.co.in/" class="btn btn-primary">Live Demo</a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+   Copyright © manivaanan - 2026
+  </footer>
 
 </body>
 </html>
